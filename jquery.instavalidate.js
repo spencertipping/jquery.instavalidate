@@ -24,10 +24,10 @@
 // | 1. className: The CSS class to use to mark a field as invalid. Defaults to 'invalid'.
 //   2. invalid: A function to be called when the field transitions from valid to invalid. Defaults to null.
 //   3. valid: A function to be called when the field transitions from invalid to valid. Defaults to null.
-//   4. delay: How many milliseconds to wait after the last keystroke before validating. Defaults to 50.
+//   4. delay: How many milliseconds to wait after the last keystroke before validating. Defaults to 0.
 
 (function ($) {
-  var defaults = {className: 'invalid', invalid: null, valid: null, delay: 50};
+  var defaults = {className: 'invalid', invalid: null, valid: null, delay: 0};
   
   $.fn.instavalidate = function (validator, options) {
     var validate_function = validator.constructor === RegExp ? function (value) {return validator.test(value)} : validator;

@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script src='jquery.instavalidate.js'></script>
+
+    <style>
+      body {font-family: sans-serif}
+      .invalid {color: red}
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr><td>Alphanumeric only:</td><td><input id='regexp-alnum' /><script>$('#regexp-alnum').instavalidate(/^[A-Za-z0-9]*$/)</script></td></tr>
+      <tr><td>Email addresses:</td><td><input id='regexp-email' /><script>$('#regexp-email').instavalidate(/^\w+@\w[\w\.]*\.[a-z]{2,3}$/)</script></td></tr>
+      <tr><td>American phone numbers:</td><td><input id='regexp-phone' /><script>$('#regexp-phone').instavalidate(/^(1[-\.]?)?(\d{3}[-\.]?)?\d{3}[-\.]?\d{4}$/)</script></td></tr>
+
+      <tr><td>Palindromes:</td><td><input id='palindrome' /><script>$('#palindrome').instavalidate(function (x) {return x.split('').reverse().join('') === x})</script></td></tr>
+
+      <tr><td>Substring of jquery.instavalidate source:</td>
+          <td><input id='source' />
+              <script>
+              $('#source').instavalidate(function (x, callback) {
+                $.get('jquery.instavalidate.js', function (data) {
+                  callback(data.indexOf(x) > -1);
+                });
+              });
+              </script>
+          </td></tr>
+    </div>
+  </body>
+</html>
