@@ -25,6 +25,7 @@
 //   2. invalid: A function to be called when the field transitions from valid to invalid. Defaults to null.
 //   3. valid: A function to be called when the field transitions from invalid to valid. Defaults to null.
 //   4. delay: How many milliseconds to wait after the last keystroke before validating. Defaults to 0.
+//   5. immediate: Whether to update on each keystroke. If false, the validation status will be updated only on blur. Defaults to true.
 
 (function ($) {
   var defaults = {className: 'invalid', invalid: null, valid: null, delay: 0};
@@ -59,7 +60,8 @@
         }, options.delay);
       };
 
-      $(this).keyup(validator).change(validator);
+      $(this).change(validator);
+      options.immediate && $(this).keyup(validator);
     });
   };
 })(jQuery);
