@@ -1,0 +1,10 @@
+A really quick validator for jQuery. For example:
+
+  $('input.email').instavalidate(/^\w+@\w+\.\w+/);
+
+Now add this to your stylesheet:
+
+  .invalid {color: red}
+
+And that's it. Your input will turn red when an invalid e-mail address is entered.
+There are more options too; see the source for details.

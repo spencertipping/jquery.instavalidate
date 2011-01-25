@@ -60,7 +60,7 @@
         }, options.delay);
       };
 
-      $(this).change(validator);
+      $(this).blur(validator);
       options.immediate && $(this).keyup(validator);
     });
   };

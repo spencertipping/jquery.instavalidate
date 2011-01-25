@@ -60,7 +60,7 @@ There are a few options you can set:
         }, options.delay);
       };
 
-      $(this).change(validator);
+      $(this).blur(validator);
       options.immediate && $(this).keyup(validator);
     });
   };
