@@ -62,6 +62,7 @@
 
       $(this).blur(validator);
       options.immediate && $(this).keyup(validator);
+      options.immediate && validator.call(this);
     });
   };
 })(jQuery);
