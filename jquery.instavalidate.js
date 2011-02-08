@@ -28,7 +28,7 @@
 //   5. immediate: Whether to update on each keystroke. If false, the validation status will be updated only on blur. Defaults to true.
 
 (function ($) {
-  var defaults = {className: 'invalid', invalid: null, valid: null, delay: 0};
+  var defaults = {className: 'invalid', invalid: null, valid: null, delay: 0, immediate: true};
   
   $.fn.instavalidate = function (validator, options) {
     var validate_function = validator.constructor === RegExp ? function (value) {return validator.test(value)} : validator;
